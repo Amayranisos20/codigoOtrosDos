@@ -1,8 +1,11 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelectorById("formulario"); //En este caso podemos observar que no existe un ID
+                                                //llamado form 
+                                                //Tambien agregue (;) al final.
 
-formulario.onsubmit = function(e) {
+formulario.onsubmit = function(e) => {  //En este apartado coloque (=>) ya que esta haciendo referencia a una 
+                                        //arrow function. 
 
-  e.prevent();
+  e.preventDefault(); //Aqui realice una correccion a preventDefault
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -16,7 +19,7 @@ formulario.onsubmit = function(e) {
   console.log(nombre, edad)
   console.log(nacionalidad)
 
-  if (nombre.length === 0) {
+  if (nombre.length === 0) {   //length no se menciona anteriormente 
     n.classList.add("error")
   }
   if (edad < 18 || edad > 120) {
@@ -52,7 +55,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
     nacionalidad = "Peruana"
   }
 
-var lista = document.getElementById("lista-de-invitados")
+var lista = document.getElementById("lista-de-invitados") //Aqui esta bien ya que si esta llamando un ID 
 
 var elementoLista = document.createElement("div")
 elementoLista.classList.added("elemento-lista")

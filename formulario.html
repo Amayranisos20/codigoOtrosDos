@@ -5,28 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./styles.css"> <!-- Aqui conecte style por que no lo reconocia -->
   <title>Formulario</title>
 </head>
 <body>
   <h1>Bienvenidos a mi fiesta</h1>
   <h2>Por favor, confirmar asistencia:</h2>
 
-  <form class="formulario">
+  <form id="formulario">  <!-- Aqui coloque un Id: para poder referenciarlo en JS en la variable formulario para manipular la API DOM -->
     Nombre <input type="text" name="name" id="name">
     <br />
     Edad <input type="number" name="age" id="age">
     <br />
 
-    Nacionalidad
-    <select name="nationality" id="nationality">
+   <label for="nacionalidad">Nacionalidad</label>  <!-- Para una mayor legibilidad es importante que por cada imput haya un label 
+                                                      coloque en for de la etiqueta label el id del imput "nacionalidad"-->
+    <select name="nationality" id="nationality">     
       <option value="ar">Argentina</option>
       <option value="mx">Mexicana</option>
       <option value="per">Peruana</option>
       <option value="vnzl">Venezolana</option>
     </select>
     <br />
-    <input type="submit">
+    <input id="nacionalidad" type="submit">    <!-- Es importante mencionar que por si solo input funciona pero
+                                                   es mejor cuando tiene contexto -->
   </form>
 
   <div>
@@ -34,7 +36,7 @@
 
   </div>
 
-  <script src="../formulario.js"></script>
+  <script src="./formulario.js"></script> <!-- Aqui estoy conectando de nuevo el formulario ya que tenia dos puntos y nos saca a dos carperas afuera  -->
 </body>
 
 </html>
